@@ -9,7 +9,7 @@ In order to make this demo work you should have installed the following programs
 
 * OS: Linux (WSL or VM will do too)
 * [Hyperledger Fabric Release 2.3](https://github.com/hyperledger/fabric/releases/tag/v2.3.1)
-* [Hyperledger Fabric-Ca Relaise 1.4](https://github.com/hyperledger/fabric-ca/releases/tag/v1.4.9)
+* [Hyperledger Fabric-Ca Release 1.4](https://github.com/hyperledger/fabric-ca/releases/tag/v1.4.9)
 * Docker 
 * Docker Compose
 
