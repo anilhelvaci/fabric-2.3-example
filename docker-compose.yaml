@@ -140,7 +140,6 @@ services:
         - CORE_PEER_GOSSIP_ORGLEADER=true
         - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.Org1.com:8054
         - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.Org1.com:8054
-        - CORE_PEER_GOSSIP_SKIPHANDSHAKE=true
         - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
         - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=peer1.Org1.com.couchdb:5984
         - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=dbadmin
@@ -249,11 +248,10 @@ services:
         - CORE_PEER_TLS_CERT_FILE=/tmp/hyperledger/Org2/peer1/tls/Org2-peer1-tls-cert.pem
         - CORE_PEER_TLS_KEY_FILE=/tmp/hyperledger/Org2/peer1/tls/Org2-peer1-tls-key.pem
         - CORE_PEER_TLS_ROOTCERT_FILE=/tmp/hyperledger/Org2/peer1/tls/tls-ca-cert.pem
-        - CORE_PEER_GOSSIP_USELEADERELECTION=true
-        - CORE_PEER_GOSSIP_ORGLEADER=false
+        - CORE_PEER_GOSSIP_USELEADERELECTION=false
+        - CORE_PEER_GOSSIP_ORGLEADER=true
         - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.Org2.com:9054
         - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.Org2.com:9054
-        - CORE_PEER_GOSSIP_SKIPHANDSHAKE=true
         - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
         - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=peer1.Org2.com.couchdb:5984
         - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=dbadmin
