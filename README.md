@@ -54,10 +54,10 @@ In this network we have two clis and some chaincode operations have to be run on
 After we complete above steps we can now operate on one cli
 * Time to commit the chaincode to the ledger<br/>`peer lifecycle chaincode commit -o $ORDERER_ADDRESS --channelID testchannel --name javascript --version 0.0.1 --sequence 1 --tls --cafile $ORDERER_TLS_CA --peerAddresses peer1.Org1.com:8054 --tlsRootCertFiles ./Org1/peer1/tls/tls-ca-cert.pem --peerAddresses peer1.Org2.com:9054 --tlsRootCertFiles ./Org2/peer1/tls/tls-ca-cert.pem`
 
-* Now we can finally work with our chaincode.For example<br/>`peer chaincode invoke -o $ORDERER_ADDRESS --tls --cafile $ORDERER_TLS_CA -C testchannel -n javascript --peerAddresses peer1.dogus.com:8054 --tlsRootCertFiles ./dogus/peer1/tls/tls-ca-cert.pem --peerAddresses peer1.unsped.com:9054 --tlsRootCertFiles ./unsped/peer1/tls/tls-ca-cert.pem -c '{"function":"myAssetExists","Args":["1"]}'`
+* Now we can finally work with our chaincode.For example<br/>`peer chaincode invoke -o $ORDERER_ADDRESS --tls --cafile $ORDERER_TLS_CA -C testchannel -n javascript --peerAddresses peer1.Org1.com:8054 --tlsRootCertFiles ./Org1/peer1/tls/tls-ca-cert.pem --peerAddresses peer1.Org2.com:9054 --tlsRootCertFiles ./Org2/peer1/tls/tls-ca-cert.pem -c '{"function":"myAssetExists","Args":["1"]}'`
 
 * Should output something like this;<br/>`2021-02-25 10:45:49.791 UTC [chaincodeCmd] chaincodeInvokeOrQuery -> INFO 001 Chaincode invoke successful. result: status:200 payload:"false"`
 
-* To write data to the ledger;<br/>`peer chaincode invoke -o $ORDERER_ADDRESS --tls --cafile $ORDERER_TLS_CA -C testchannel -n javascript --peerAddresses peer1.dogus.com:8054 --tlsRootCertFiles ./dogus/peer1/tls/tls-ca-cert.pem --peerAddresses peer1.unsped.com:9054 --tlsRootCertFiles ./unsped/peer1/tls/tls-ca-cert.pem -c '{"function":"createMyAsset","Args":["1", "hello world"]}'`
+* To write data to the ledger;<br/>`peer chaincode invoke -o $ORDERER_ADDRESS --tls --cafile $ORDERER_TLS_CA -C testchannel -n javascript --peerAddresses peer1.Org1.com:8054 --tlsRootCertFiles ./Org1/peer1/tls/tls-ca-cert.pem --peerAddresses peer1.Org2.com:9054 --tlsRootCertFiles ./Org2/peer1/tls/tls-ca-cert.pem -c '{"function":"createMyAsset","Args":["1", "hello world"]}'`
 
 * To query it;<br/>`peer chaincode query -C testchannel -n javascript -c '{"Args":["readMyAsset", "1"]}'`
